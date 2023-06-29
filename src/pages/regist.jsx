@@ -1,6 +1,7 @@
 function Regist(){
     return(
-        <div className="flex justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
+            <h1 className="text-gray-800 dark:text-gray-200 text-xl">Registration</h1>
             <form className="w-full sm:w-1/3 flex flex-col gap-2">
                 <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
                     <legend className="px-2 text-gray-500">UserName</legend>

@@ -1,9 +1,7 @@
 import { useState } from "react";
 
-function HomeTopStats(){
+function HomeTopStats( {data} ){
 
-    const localData = JSON.parse(localStorage.getItem('dataBase'));
-    const [ data, setData ] = useState(localData ? localData : []);
     const filter = (val) => {
         const filter = data.filter( (inv) => {
             if(inv.type === val) return inv;
