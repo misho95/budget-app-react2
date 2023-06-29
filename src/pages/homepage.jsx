@@ -1,6 +1,7 @@
 import HomeFilter from "../components/home.filter";
 import HomeTopStats from "../components/home.topstats"
 import HomeMidStats from "../components/home.midstats";
+import HomeInv from "../components/home.inv";
 import { useState, useReducer, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -139,29 +140,7 @@ function HomePage(){
                     {
                         render.map( (inv) => {
                             return(
-                                <div key={inv.id} className={`w-full sm:w-fit h-fit ${inv.type ? 'bg-green-300' : 'bg-red-300'}  p-3 rounded-lg text-gray-800 flex flex-col gap-2 relative pr-12 shadow-sm`}>
-                                    <div className="absolute right-3 top-3 pb-3 h-full flex flex-col justify-between">
-                                        <button onClick={() => deleteInv(inv.id)}>
-                                            <span className="material-symbols-outlined">
-                                                delete
-                                            </span>
-                                        </button>
-                                        <Link to={`/invoice?id=${inv.id}`}>
-                                            <button>
-                                                <span className="material-symbols-outlined">
-                                                    edit
-                                                </span>
-                                            </button>
-                                        </Link>
-                                    </div>
-                                    <div className="flex items-center gap-2"><span className="material-symbols-outlined">
-                                        calendar_month
-                                        </span>{inv.date}</div>
-                                    <div className="flex items-center gap-2"><span className="material-symbols-outlined">{inv.icon}</span> {inv.category}</div>
-                                    <div className="flex items-center gap-2"><span className="material-symbols-outlined">
-                                        paid
-                                        </span> {inv.amount}</div>
-                                </div>
+                              <HomeInv id={inv.id} date={inv.date} type={inv.type} category={inv.category} icon={inv.icon} amount={inv.amount} deleteInv={deleteInv}/>
                             )
                         })
                     }

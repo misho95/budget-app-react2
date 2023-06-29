@@ -47,7 +47,11 @@ function Invoice(){
         category: cat,
         amount: amount,
         icon: getIcon(cat) }])
-        console.log(cat);
+  
+        setDate('');
+        setCat('');
+        setType(true);
+        setAmount('');
     }
 
     useEffect( () => {
