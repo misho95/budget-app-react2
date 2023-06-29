@@ -7,23 +7,24 @@ import Invoice from './pages/invoice'
 import Regist from './pages/regist'
 import Login from './pages/login'
 import Header from './components/header'
+import Authenication from './authenication'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:
-      <>
+      <Authenication>
         <Header />
         <HomePage />
-      </>
+      </Authenication>
   },
   {
     path: "/invoice",
     element: 
-    <>
-    <Header />
-    <Invoice />
-    </>
+    <Authenication>
+      <Header />
+      <Invoice />
+    </Authenication>
   },
   {
     path: "/registration",
