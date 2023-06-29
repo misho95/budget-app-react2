@@ -21,6 +21,13 @@ handler(filteredData);
 
 }
 
+const clearForm = () => {
+    setDate('');
+    setCat('');
+    setMin('');
+    setMax('');
+}
+
     return(
         <div className="w-full flex justify-between">
         <form onSubmit={filterInvoice} className="w-full flex flex-col sm:flex-row gap-3 justify-around items-center">
@@ -37,8 +44,10 @@ handler(filteredData);
                  <input value={min} onChange={(e) => setMin(e.target.value)} type="text" placeholder="min" className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-2 border-gray-300 dark:border-gray-600 rounded-md p-1"/>
 
                  <input value={max} onChange={(e) => setMax(e.target.value)} type="text" placeholder="max" className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-2 border-gray-300 dark:border-gray-600 rounded-md p-1"/>
-
-             <button className="bg-purple-300 dark:bg-purple-400 py-2 px-4 rounded-md text-purple-700">Filter</button>
+            <div className="flex gap-5">
+                <button type="reset" className="bg-purple-300 dark:bg-purple-400 py-2 px-4 rounded-md text-purple-700" onClick={clearForm}>Clear</button>
+                <button type="submit" className="bg-purple-300 dark:bg-purple-400 py-2 px-4 rounded-md text-purple-700">Filter</button>
+            </div>
         </form>
      </div>
     )

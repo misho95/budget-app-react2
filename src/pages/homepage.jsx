@@ -130,7 +130,7 @@ function HomePage(){
                 </div>
                 <div className="flex gap-3 flex-wrap">
 
-                <Link to='/invoice'>
+                <Link to='/invoice' className="w-full sm:w-fit h-fit">
                 <div  className="bg-purple-300 text-purple-800 w-full sm:w-fit h-fit p-10 flex justify-center items-center rounded-lg cursor-pointer shadow-sm">
                     <span className="material-symbols-outlined select-none text-2xl">
                         add_box
@@ -140,7 +140,7 @@ function HomePage(){
                     {
                         render.map( (inv) => {
                             return(
-                              <HomeInv id={inv.id} date={inv.date} type={inv.type} category={inv.category} icon={inv.icon} amount={inv.amount} deleteInv={deleteInv}/>
+                              <HomeInv key={inv.id} id={inv.id} date={inv.date} type={inv.type} category={inv.category} icon={inv.icon} amount={inv.amount} deleteInv={deleteInv}/>
                             )
                         })
                     }

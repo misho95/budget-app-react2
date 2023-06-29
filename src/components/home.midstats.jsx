@@ -30,23 +30,27 @@ function HomeMidStats( {data} ){
         <div className="w-full flex flex-col gap-5">
         <div className="flex flex-col sm:flex-row gap-2 text-center text-gray-600 dark:text-gray-300 p-1 justify-start items-center">
             <h1 className="text-lg bg-yellow-200 text-yellow-800 py-1 px-2 rounded-lg shadow-sm">income/expense</h1>
-            {
+            <div className="flex gap-2 flex-wrap sm:flex-nowrap justify-center">
+                {
                     stats.map( (stat, index) => {
                         return(
                             <span key={index} className="bg-yellow-100 py-1 px-2 text-yellow-800 rounded-lg shadow-sm" >{stat} {calculateStats(stat)}</span>
                         )
                     })
                 }
+            </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-2 text-center text-gray-600 dark:text-gray-300 p-1 justify-start items-center">
             <h1 className="text-lg bg-yellow-200 text-yellow-800 py-1 px-2 rounded-lg shadow-sm">Top 3</h1>
-            {
+            <div className="flex gap-2 flex-wrap sm:flex-nowrap justify-center">
+                {
                     slice.map( (stat, index) => {
                         return(
                             <span key={index} className="bg-yellow-100 py-1 px-2 text-yellow-800 rounded-lg shadow-sm" >{stat.category} {stat.amount}</span>
                         )
                     })
                 } 
+            </div>
         </div>
     </div>
     )
