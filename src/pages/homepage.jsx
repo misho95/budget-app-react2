@@ -87,11 +87,11 @@ function HomePage(){
     }
 
         const deleteInv = (id) => {
-            const deleteData = localData.filter( (inv) => {
+            const deleteData = data.filter( (inv) => {
                 if(inv.id !== id) return inv;
             });
 
-            setLocalData(deleteData);
+            setData(deleteData);
             localStorage.setItem('dataBase', JSON.stringify(deleteData));
 
         }

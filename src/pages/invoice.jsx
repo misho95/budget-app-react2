@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSearchParams } from "react-router-dom";
 import FormControl from '@mui/material/FormControl'
+import InputLabel from '@mui/material/InputLabel'
+import Select from '@mui/material/Select'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import RadioGroup from '@mui/material/RadioGroup';
 import Radio from '@mui/material/Radio'
+import MenuItem  from '@mui/material/MenuItem'
 
 function Invoice(){
 
@@ -116,9 +119,25 @@ function Invoice(){
                                 </RadioGroup>
                             </FormControl>
                         </fieldset>
-                        <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
-                            <legend className="px-2 ">Category</legend>
-                            <select value={cat} onChange={ (e) => { setCat(e.target.value)}} className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none" required>
+                            <FormControl fullWidth>
+                                <InputLabel id="demo-simple-select-label" className='textgray-800 dark:text-gray-200'>Category</InputLabel>
+                                <Select className='border-2 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200'
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={cat}
+                                    label="category"
+                                    onChange={ (e) => { setCat(e.target.value)}}
+                                >
+
+                                        {type && <MenuItem value={'invoice'} >invoice</MenuItem>}
+                                        {!type && <MenuItem value={'shopping'} >shopping</MenuItem>}
+                                        {!type && <MenuItem value={'gym'}>gym</MenuItem>}
+                                        {!type && <MenuItem value={'family'}>family</MenuItem>}
+                                        <MenuItem value={'other'}>other</MenuItem>
+                                   
+                                </Select>
+                            </FormControl>
+                            {/* <select value={cat} onChange={ (e) => { setCat(e.target.value)}} className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none" required>
                                 {type ? <>
                                 <option>invoice</option>
                                 <option>other</option>
@@ -128,8 +147,7 @@ function Invoice(){
                                 <option>family</option>
                                 <option>other</option>
                                 </>}
-                            </select>
-                        </fieldset>
+                            </select> */}
                         <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
                             <legend className="px-2 ">Amount</legend>
                             <input type="text" value={amount} onChange={ (e) => { setAmount(e.target.value)}} placeholder="amount.." className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none" required/>
