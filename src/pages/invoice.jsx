@@ -141,17 +141,6 @@ function Invoice(){
                                    
                                 </Select>
                             </FormControl>
-                            {/* <select value={cat} onChange={ (e) => { setCat(e.target.value)}} className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none" required>
-                                {type ? <>
-                                <option>invoice</option>
-                                <option>other</option>
-                                </> : <>
-                                <option>shopping</option>
-                                <option>gym</option>
-                                <option>family</option>
-                                <option>other</option>
-                                </>}
-                            </select> */}
                         <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
                             <legend className="px-2 ">Amount</legend>
                             <input type="text" value={amount} onChange={ (e) => { setAmount(e.target.value)}} placeholder="amount.." className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none" required/>

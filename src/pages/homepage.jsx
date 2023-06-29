@@ -31,32 +31,32 @@ function HomePage(){
 
       const [filter, dispatchFilter] = useReducer(filterReducer, 'DATE');
 
-      const filteredData = data.filter(inv => {
+      const filteredData = render.filter(inv => {
         if (filter === 'DATE') {
-          return data.sort( (a, b) => {
+          return render.sort( (a, b) => {
             return new Date(b.date) - new Date(a.date);
           })
         }
     
         if (filter === 'EXPENSE') {
-            return data.sort( (a, b) => {
+            return render.sort( (a, b) => {
               return a.type - b.type;
             })
           }
         if (filter === 'INCOME') {
-            return data.sort( (a, b) => {
+            return render.sort( (a, b) => {
               return b.type - a.type;
             })
           }
 
         if (filter === 'AMOUNTINC') {
-            return data.sort( (a, b) => {
+            return render.sort( (a, b) => {
               return a.amount - b.amount;
             })
           }
 
         if (filter === 'AMOUNTDEC') {
-            return data.sort( (a, b) => {
+            return render.sort( (a, b) => {
               return b.amount - a.amount;
             })
           }
