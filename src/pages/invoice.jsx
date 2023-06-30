@@ -13,7 +13,6 @@ function Invoice(){
 
     const [searchParams, setSearchParams] = useSearchParams();
     const ID = searchParams.get('id');
-
     const dataBase = JSON.parse(localStorage.getItem('dataBase'));
     const [ localData, setLocalData ] = useState( dataBase ? dataBase : []);
     const [ date, setDate ] = useState('');
@@ -39,14 +38,15 @@ function Invoice(){
 
     const addInvoice = (e) => {
         e.preventDefault();
-        console.log(date, cat, type, amount);
 
         setLocalData([...localData, {   id: uuidv4(),
         date: date,
         type: type,
         category: cat,
         amount: amount,
-        icon: getIcon(cat) }])
+        icon: getIcon(cat),
+        userID
+    }])
   
         setDate('');
         setCat('');

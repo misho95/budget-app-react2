@@ -7,10 +7,15 @@ import { Link } from "react-router-dom";
 
 function HomePage(){
 
+    const userID = localStorage.getItem('ID');
     const dataBase = JSON.parse(localStorage.getItem('dataBase'));
-    const [ data, setData ] = useState( dataBase ? dataBase : []);
+      const userData = dataBase?.filter( (data) => {
+        if(data.userID === userID) return data;
+      })
+    const [ data, setData ] = useState( dataBase ? userData : []);
     const [filterData, setFilterData] = useState(null);
     const [ render, setRender] = useState([]);
+
 
     const filterReducer = (state, action) => {
         switch (action.type) {

@@ -1,8 +1,16 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Header(){
 
+    const ID = localStorage.getItem('ID');
+    const localUserData = JSON.parse(localStorage.getItem('userDataBase'));
+    const [userData, setUserData] = useState( localUserData ? localUserData : []);
+    const userSigned = userData.find( (usr) => {
+        if(usr.id === ID) return usr;
+    })
+    const Navigate = useNavigate();
     const darkSlide = useRef();
     const darkBtn = useRef();
 
@@ -28,6 +36,11 @@ function Header(){
         localStorage.setItem('theme', theme);
     }, [theme])
 
+    const signOut = () => {
+        localStorage.removeItem('ID');
+        Navigate('/signin')
+    }
+
 
     return(
         <div className="flex justify-between">
@@ -37,16 +50,27 @@ function Header(){
                     home
                     </span>
                 </Link>
-                <Link to='/login' className='bg-purple-300 text-purple-800 p-1 flex rounded-full'>
+                { !ID &&
+                <Link to='/signin' className='bg-purple-300 text-purple-800 p-1 flex rounded-full'>
                     <span className="material-symbols-outlined">
                     account_circle
                     </span>
                 </Link>
+                 }
+                  { !ID &&
                 <Link to='/registration' className='bg-purple-300 text-purple-800 p-1 flex rounded-full'>
                     <span className="material-symbols-outlined">
                     how_to_reg
                     </span>
                 </Link>
+                    }
+                {ID && <div className='flex gap-2 justify-center items-center text-gray-800 dark:text-gray-200'><span>Hello {userSigned.user}</span>
+                <button onClick={signOut} className='bg-purple-300 text-purple-800 p-1 flex rounded-full'>
+                    <span className="material-symbols-outlined">
+                    logout
+                    </span>
+                </button>
+                </div>}
             </div>
             <span>
                 <div onClick={darkMode} className="w-16 h-8 bg-gray-200 dark:bg-gray-800 rounded-full border-2 border-gray-300 dark:border-gray-700 relative">

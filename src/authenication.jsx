@@ -1,17 +1,18 @@
 import { Navigate } from "react-router-dom";
+import { useState } from "react";
 
 function Authenication( {children} ){
 
-    const isUserValid = false;
+    const userSigned = localStorage.getItem('ID');
 
-    if(!isUserValid){
+    if(!userSigned){
         return (
-            <Navigate to="/login" />
+            <Navigate to="/signin" />
         )
     }
 
     return(
-        isUserValid && children
+        userSigned && children
     )
 }
 
