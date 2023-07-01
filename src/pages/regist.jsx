@@ -17,24 +17,30 @@ function Regist(){
     const navigate = useNavigate(); 
 
     const checkUser = () => {
-        if(user === ''){
-            setUserErr('Please FIll Out This Field');
-            setUserSucc(null);
-            return;
-        }
+            if(user === ''){
+                setUserErr('Please FIll Out This Field');
+                setUserSucc(null);
+                return;
+            }
+                if(user.includes(' ')){
+                setUserErr('No Spaces');
+                setUserSucc(null);
+                return;
+            }
+         
+            const checkUser = userData.find( (userData) => {
+                if(userData.user === user) return userData;
+            });
 
-    const checkUser = userData.find( (userData) => {
-            if(userData.user === user) return userData;
-        });
-        if(checkUser) {
-            setUserErr('Already Existed');
-            setUserSucc(null);
-            return;
-        } else {
-            setUserErr(null);
-            setUserSucc('Avalable');
-            return;
-        }
+            if(checkUser) {
+                setUserErr('Already Existed');
+                setUserSucc(null);
+                return;
+            } else {
+                setUserErr(null);
+                setUserSucc('Avalable');
+                return;
+            }
     }
 
     const checkPass = () => {
