@@ -19,6 +19,7 @@ function Invoice(){
     const [ type, setType ] = useState(true);
     const [ cat, setCat ] = useState('');
     const [ amount , setAmount ] = useState('');
+    const userID = localStorage.getItem('ID');
 
 
     const getIcon = (val) => {
