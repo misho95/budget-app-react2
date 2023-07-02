@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom'
+import Button from "../components/button";
 
 function Login(){
 
@@ -40,7 +41,7 @@ function Login(){
                 </fieldset>
                 {passErr && <div className="text-red-500 pl-1">{passErr}</div>}
                 <Link to='/forgotPassword' className="text-gray-800 dark:text-gray-200">დაგავიწყდა პაროლი?</Link>
-                <button className="bg-purple-300 p-2">შესვლა</button>
+                <Button name={'შესვლა'} />
             </form>
         </div>
     )

@@ -45,8 +45,8 @@ const clearForm = () => {
 
                  <input value={max} onChange={(e) => setMax(e.target.value)} type="text" placeholder="max" className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-2 border-gray-300 dark:border-gray-600 rounded-md p-1"/>
             <div className="flex gap-5">
-                <button type="reset" className="bg-purple-300 dark:bg-purple-400 py-2 px-4 rounded-md text-purple-700" onClick={clearForm}>გასუფთავება</button>
-                <button type="submit" className="bg-purple-300 dark:bg-purple-400 py-2 px-4 rounded-md text-purple-700">გაფილტვრა</button>
+                <button type="reset" className="bg-purple-300 dark:bg-purple-400 py-2 px-4 rounded-md shadow-sm shadow-gray-500 dark:shadow-gray-900 outline-double outline-purple-200 dark:outline-gray-600 text-purple-800" onClick={clearForm}>გასუფთავება</button>
+                <button type="submit" className="bg-purple-300 dark:bg-purple-400 py-2 px-4 rounded-md shadow-sm shadow-gray-500 dark:shadow-gray-900 outline-double outline-purple-200 dark:outline-gray-600 text-purple-800">გაფილტვრა</button>
             </div>
         </form>
      </div>

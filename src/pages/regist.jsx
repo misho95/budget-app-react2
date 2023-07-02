@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from "react-router-dom";
+import Button from "../components/button";
 
 
 function Regist(){
@@ -100,7 +101,7 @@ function Regist(){
                         <legend className="px-2 text-gray-500">გაიმეორე პაროლი</legend>
                         <input value={rePass} onChange={(e) => { setRePass(e.target.value)}} onBlur={checkPass} type="password" placeholder="********" className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none text-gray-800 dark:text-gray-200" required/>
                     </fieldset>
-                <button className="bg-purple-300 p-2">რეგისტრაცია</button>
+                <Button name={'რეგისტრაცია'} />
             </form>
         </div>
     )

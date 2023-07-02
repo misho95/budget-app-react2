@@ -45,27 +45,27 @@ function Header(){
     return(
         <div className="flex justify-between">
             <div className='flex gap-2'>
-                <Link to='/' className='bg-purple-300 text-purple-800 p-1 flex rounded-full'>
+                <Link to='/' className='bg-purple-300 p-1 flex rounded-full shadow-sm shadow-gray-500 dark:shadow-gray-900 outline-double outline-purple-200 dark:outline-gray-600 text-purple-800'>
                     <span className="material-symbols-outlined">
                     home
                     </span>
                 </Link>
                 { !ID &&
-                <Link to='/signin' className='bg-purple-300 text-purple-800 p-1 flex rounded-full'>
+                <Link to='/signin' className='bg-purple-300 p-1 flex rounded-full shadow-sm shadow-gray-500 dark:shadow-gray-900 outline-double outline-purple-200 dark:outline-gray-600 text-purple-800'>
                     <span className="material-symbols-outlined">
                     account_circle
                     </span>
                 </Link>
                  }
                   { !ID &&
-                <Link to='/registration' className='bg-purple-300 text-purple-800 p-1 flex rounded-full'>
+                <Link to='/registration' className='bg-purple-300 p-1 flex rounded-full shadow-sm shadow-gray-500 dark:shadow-gray-900 outline-double outline-purple-200 dark:outline-gray-600 text-purple-800'>
                     <span className="material-symbols-outlined">
                     how_to_reg
                     </span>
                 </Link>
                     }
                 {ID && <div className='flex gap-2 justify-center items-center text-gray-800 dark:text-gray-200'><span>გამარჯობა {userSigned.user}</span>
-                <button onClick={signOut} className='bg-purple-300 text-purple-800 p-1 flex rounded-full'>
+                <button onClick={signOut} className='bg-purple-300 p-1 flex rounded-full shadow-sm shadow-gray-500 dark:shadow-gray-900 outline-double outline-purple-200 dark:outline-gray-600 text-purple-800'>
                     <span className="material-symbols-outlined">
                     logout
                     </span>

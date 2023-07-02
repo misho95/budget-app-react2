@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../components/button";
 
 function ForgotPassword(){
 
@@ -64,7 +65,7 @@ function ForgotPassword(){
                 <input value={user} onChange={ (e) => setUser(e.target.value)} type="text" placeholder="სახელი" className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none text-gray-800 dark:text-gray-200" required/>
             </fieldset>
             {userErr && <div className="text-red-500 pl-1">{userErr}</div>}
-            <button className="bg-purple-300 p-2">დამავიწყდა</button>
+            <Button name={'გაგზავნა'} />
         </form>
         }
       
@@ -79,7 +80,7 @@ function ForgotPassword(){
                 <input value={rePass} onChange={ (e) => setRePass(e.target.value)} type="text" placeholder="*******" className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none text-gray-800 dark:text-gray-200" required/>
             </fieldset>
             {passErr && <div className="text-red-500 pl-1">{passErr}</div>}
-            <button className="bg-purple-300 p-2">განაახლე პაროლი</button>
+           <Button name={'განაახლე პაროლი'} />
             </form>
         }
     </div>

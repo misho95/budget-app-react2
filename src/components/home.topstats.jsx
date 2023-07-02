@@ -33,13 +33,13 @@ function HomeTopStats( {data} ){
     return(
         <div id="topStats" className="flex justify-center items-center gap-3 text-gray-600 dark:text-gray-300 text-lg">
         <span className="bg-green-100 text-green-800 py-1 px-2 rounded-lg shadow-sm">
-            {income()}
-        </span>
-        <span className="bg-purple-200 text-purple-800 py-1 px-2 rounded shadow-sm">
-            {diff()}
+            შემოსავალი: {income()}
         </span>
         <span className="bg-red-200 text-red-800 py-1 px-2 rounded shadow-sm">
-            {expense()}
+            გასავალი: {expense()}
+        </span>
+        <span className="bg-purple-200 text-purple-800 py-1 px-2 rounded shadow-sm">
+           სხვაობა:  {diff()}
         </span>
  </div>
     )
