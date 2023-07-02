@@ -14,8 +14,8 @@ function Header(){
     const darkSlide = useRef();
     const darkBtn = useRef();
 
-    const localTheme = localStorage.getItem('theme');
-    const [ theme, setTheme ] = useState(localTheme ? localTheme : true);
+    const localTheme = JSON.parse(localStorage.getItem('theme'));
+    const [ theme, setTheme ] = useState(localTheme === false ? localTheme : true);
 
     const darkMode = () => {
         setTheme(!theme);
@@ -33,7 +33,7 @@ function Header(){
             darkSlide.current.classList.add('left-8');
             darkBtn.current.textContent = 'dark_mode';
         }
-        localStorage.setItem('theme', theme);
+        localStorage.setItem('theme', JSON.stringify(theme));
     }, [theme])
 
     const signOut = () => {
