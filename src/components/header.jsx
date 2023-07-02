@@ -64,7 +64,7 @@ function Header(){
                     </span>
                 </Link>
                     }
-                {ID && <div className='flex gap-2 justify-center items-center text-gray-800 dark:text-gray-200'><span>Hello {userSigned.user}</span>
+                {ID && <div className='flex gap-2 justify-center items-center text-gray-800 dark:text-gray-200'><span>გამარჯობა {userSigned.user}</span>
                 <button onClick={signOut} className='bg-purple-300 text-purple-800 p-1 flex rounded-full'>
                     <span className="material-symbols-outlined">
                     logout

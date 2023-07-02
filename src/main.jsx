@@ -8,6 +8,7 @@ import Regist from './pages/regist'
 import Login from './pages/login'
 import Header from './components/header'
 import Authenication from './authenication'
+import ForgotPassword from './pages/forgotpassword'
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
     <>
     <Header />
     <Login />
+    </>
+  },
+  {
+    path: "/forgotPassword",
+    element: 
+    <>
+    <Header />
+    <ForgotPassword />
     </>
   }
 ])

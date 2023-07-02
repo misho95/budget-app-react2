@@ -126,11 +126,11 @@ function HomePage(){
             <div className="w-full flex flex-col gap-3">
                 <div className="w-full flex justify-end">
                     <select onChange={sortData} className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-2 border-gray-300 dark:border-gray-600 p-1">
-                        <option>Date</option>
-                        <option>Expense</option>
-                        <option>Income</option>
-                        <option>Amount inc</option>
-                        <option>Amount dec</option>
+                        <option value={'Date'}>თარიღი</option>
+                        <option value={'Expense'}>ხარჯი</option>
+                        <option value={'Income'}>შემოსავალი</option>
+                        <option value={'Amount inc'}>ზრდადობით</option>
+                        <option value={'Amount dec'}>კლებადობით</option>
                     </select>
                 </div>
                 <div className="flex gap-3 flex-wrap">

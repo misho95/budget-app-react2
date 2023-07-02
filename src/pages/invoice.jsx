@@ -105,11 +105,11 @@ function Invoice(){
             <div className="p-2 flex justify-center items-center">
                 <form onSubmit={ID === null ? addInvoice : updateInvoice} className="w-full sm:w-1/2 flex flex-col text-gray-600 dark:text-gray-300 gap-3">
                         <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
-                            <legend className="px-2 ">Date</legend>
+                            <legend className="px-2 ">თარიღი</legend>
                             <input type="date" value={date} onChange={ (e) => { setDate(e.target.value)}} className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none" required/>
                         </fieldset>
                         <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
-                            <legend className="px-2 ">Type</legend>
+                            <legend className="px-2 ">მოდელი</legend>
                           
                             <FormControl>
                                 <RadioGroup
@@ -119,13 +119,13 @@ function Invoice(){
                                     value={type}
                                     onChange={handleChange}
                                 >
-                                    <FormControlLabel value={true} control={<Radio />} label="Income" />
-                                    <FormControlLabel value={false} control={<Radio />} label="Expense" />
+                                    <FormControlLabel value={true} control={<Radio />} label="შემოსავალი" />
+                                    <FormControlLabel value={false} control={<Radio />} label="გასავალი" />
                                 </RadioGroup>
                             </FormControl>
                         </fieldset>
                             <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label" className='textgray-800 dark:text-gray-200'>Category</InputLabel>
+                                <InputLabel id="demo-simple-select-label" className='textgray-800 dark:text-gray-200'>კატეგორია</InputLabel>
                                 <Select className='border-2 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200'
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
@@ -134,19 +134,19 @@ function Invoice(){
                                     onChange={ (e) => { setCat(e.target.value)}}
                                 >
 
-                                        {type && <MenuItem value={'invoice'} >invoice</MenuItem>}
-                                        {!type && <MenuItem value={'shopping'} >shopping</MenuItem>}
-                                        {!type && <MenuItem value={'gym'}>gym</MenuItem>}
-                                        {!type && <MenuItem value={'family'}>family</MenuItem>}
-                                        <MenuItem value={'other'}>other</MenuItem>
+                                        {type && <MenuItem value={'invoice'} >ინვოიცი</MenuItem>}
+                                        {!type && <MenuItem value={'shopping'} >შოპინგი</MenuItem>}
+                                        {!type && <MenuItem value={'gym'}>ვარჯიში</MenuItem>}
+                                        {!type && <MenuItem value={'family'}>ოჯახი</MenuItem>}
+                                        <MenuItem value={'other'}>სხვა</MenuItem>
                                    
                                 </Select>
                             </FormControl>
                         <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
-                            <legend className="px-2 ">Amount</legend>
-                            <input type="text" value={amount} onChange={ (e) => { setAmount(e.target.value)}} placeholder="amount.." className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none" required/>
+                            <legend className="px-2 ">რაოდენობა</legend>
+                            <input type="text" value={amount} onChange={ (e) => { setAmount(e.target.value)}} placeholder="რაოდენობა.." className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none" required/>
                         </fieldset>
-                        <button className="bg-purple-300 text-purple-800 p-3">{ID === null ? 'Add New Invoice' : 'Update Invoice'}</button>
+                        <button className="bg-purple-300 text-purple-800 p-3">{ID === null ? 'დამატება' : 'განახლება'}</button>
                 </form>
             </div>
         </>

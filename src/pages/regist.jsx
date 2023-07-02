@@ -18,12 +18,12 @@ function Regist(){
 
     const checkUser = () => {
             if(user === ''){
-                setUserErr('Please FIll Out This Field');
+                setUserErr('გთოხვთ შეავსოთ ველი');
                 setUserSucc(null);
                 return;
             }
                 if(user.includes(' ')){
-                setUserErr('No Spaces');
+                setUserErr('არ გამოიყენო სფეისები');
                 setUserSucc(null);
                 return;
             }
@@ -33,19 +33,19 @@ function Regist(){
             });
 
             if(checkUser) {
-                setUserErr('Already Existed');
+                setUserErr('უკვე არსებობს');
                 setUserSucc(null);
                 return;
             } else {
                 setUserErr(null);
-                setUserSucc('Avalable');
+                setUserSucc('შესაძლებელია');
                 return;
             }
     }
 
     const checkPass = () => {
         if(pass !== '' && rePass !== '' && pass !== rePass){
-            setPassErr('Passwords Do Not Match');
+            setPassErr('პაროლები არ ემთხვევა');
         } else {
             setPassErr(null);
         }
@@ -76,31 +76,31 @@ function Regist(){
 
     return(
         <div className="flex flex-col justify-center items-center">
-            <h1 className="text-gray-800 dark:text-gray-200 text-xl">Registration</h1>
+            <h1 className="text-gray-800 dark:text-gray-200 text-xl">რეგისტრაცია</h1>
             <form onSubmit={submitNewUser} className="w-full sm:w-1/3 flex flex-col gap-2">
                 <div>
                     <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
-                        <legend className="px-2 text-gray-500">Username</legend>
-                        <input value={user} onChange={(e) => { setUser(e.target.value)}} onBlur={checkUser} type="text" placeholder="username" className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none text-gray-800 dark:text-gray-200" required/>
+                        <legend className="px-2 text-gray-500">სახელი</legend>
+                        <input value={user} onChange={(e) => { setUser(e.target.value)}} onBlur={checkUser} type="text" placeholder="სახელი" className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none text-gray-800 dark:text-gray-200" required/>
                     </fieldset>
                     {userErr && <div className="text-red-500 pl-1">{userErr}</div>} { userSucc && <div className="text-green-500 pl-1">{userSucc}</div> }
                 </div>
                 <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
-                        <legend className="px-2 text-gray-500">Email</legend>
+                        <legend className="px-2 text-gray-500">მაილი</legend>
                         <input value={email} onChange={(e) => { setEmail(e.target.value)}} type="email" placeholder="Example@mail.com" className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none text-gray-800 dark:text-gray-200" required/>
                 </fieldset>
                 <div>
                     <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
-                        <legend className="px-2 text-gray-500">Password</legend>
+                        <legend className="px-2 text-gray-500">პაროლი</legend>
                         <input value={pass} onChange={(e) => { setPass(e.target.value)}} onBlur={checkPass} type="password" placeholder="********" className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none text-gray-800 dark:text-gray-200" required/>
                     </fieldset>
                     {passErr && <div className="text-red-500 pl-1">{passErr}</div>}
                 </div>
                 <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
-                        <legend className="px-2 text-gray-500">Re-Password</legend>
+                        <legend className="px-2 text-gray-500">გაიმეორე პაროლი</legend>
                         <input value={rePass} onChange={(e) => { setRePass(e.target.value)}} onBlur={checkPass} type="password" placeholder="********" className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none text-gray-800 dark:text-gray-200" required/>
                     </fieldset>
-                <button className="bg-purple-300 p-2">Registrate</button>
+                <button className="bg-purple-300 p-2">რეგისტრაცია</button>
             </form>
         </div>
     )
