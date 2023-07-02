@@ -8,6 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import RadioGroup from '@mui/material/RadioGroup';
 import Radio from '@mui/material/Radio'
 import MenuItem  from '@mui/material/MenuItem'
+import Button from '../components/button'
 
 function Invoice(){
 
@@ -146,7 +147,7 @@ function Invoice(){
                             <legend className="px-2 ">რაოდენობა</legend>
                             <input type="text" value={amount} onChange={ (e) => { setAmount(e.target.value)}} placeholder="რაოდენობა.." className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none" required/>
                         </fieldset>
-                        <button className="bg-purple-300 text-purple-800 p-3">{ID === null ? 'დამატება' : 'განახლება'}</button>
+                        <Button name={ID === null ? 'დამატება' : 'განახლება'} />
                 </form>
             </div>
         </>
