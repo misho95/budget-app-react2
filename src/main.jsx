@@ -9,6 +9,7 @@ import Login from './pages/login'
 import Header from './components/header'
 import Authenication from './authenication'
 import ForgotPassword from './pages/forgotpassword'
+import Profile from './pages/profile'
 
 const router = createBrowserRouter([
   {
@@ -46,10 +47,18 @@ const router = createBrowserRouter([
   {
     path: "/forgotPassword",
     element: 
-    <>
+    <Authenication>
     <Header />
     <ForgotPassword />
-    </>
+    </Authenication>
+  },
+  {
+    path: "/profile",
+    element: 
+    <Authenication>
+    <Header />
+    <Profile />
+    </Authenication>
   }
 ])
 

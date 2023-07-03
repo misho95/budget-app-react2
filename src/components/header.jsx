@@ -65,6 +65,7 @@ function Header(){
                 </Link>
                     }
                 {ID && <div className='flex gap-2 justify-center items-center text-gray-800 dark:text-gray-200'><span>გამარჯობა {userSigned.user}</span>
+                <Link to={`/profile?id=${userSigned.id}`}><img src={userSigned.profileImg} className='w-8 h-8 rounded-full shadow-sm shadow-gray-500 dark:shadow-gray-900 outline-double outline-purple-200 dark:outline-gray-600 text-purple-800' /></Link>
                 <button onClick={signOut} className='bg-purple-300 p-1 flex rounded-full shadow-sm shadow-gray-500 dark:shadow-gray-900 outline-double outline-purple-200 dark:outline-gray-600 text-purple-800'>
                     <span className="material-symbols-outlined">
                     logout
