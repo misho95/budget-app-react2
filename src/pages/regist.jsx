@@ -57,12 +57,15 @@ function Regist(){
         if(userErr || passErr){
             return;
         }
+
+        const defaultUrl = 'src assets imgs profile.jpg';
+        const replace = defaultUrl.replaceAll(' ', '/');
             setUserData([...userData, {
                 id: uuidv4(),
                 user,
                 email,
                 pass,
-                profileImg: 'src\assets\imgs\profile.jpg'
+                profileImg: replace
             }]);
 
           setTimeout(() => {
