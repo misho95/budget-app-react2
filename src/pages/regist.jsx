@@ -62,7 +62,7 @@ function Regist(){
                 user,
                 email,
                 pass,
-                profileImg: 'https://static.vecteezy.com/system/resources/thumbnails/002/534/006/small/social-media-chatting-online-blank-profile-picture-head-and-body-icon-people-standing-icon-grey-background-free-vector.jpg'
+                profileImg: 'src\assets\imgs\profile.jpg'
             }]);
 
           setTimeout(() => {
