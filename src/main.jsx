@@ -47,10 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/forgotPassword",
     element: 
-    <Authenication>
+    <>
     <Header />
     <ForgotPassword />
-    </Authenication>
+    </>
   },
   {
     path: "/profile",
