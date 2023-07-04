@@ -28,6 +28,12 @@ function Regist(){
                 setUserSucc(null);
                 return;
             }
+
+            if(user.length < 6){
+                setUserErr('გამოიყენეთ 6 ან მეტი');
+                setUserSucc(null);
+                return;
+            }
          
             const checkUser = userData.find( (userData) => {
                 if(userData.user === user) return userData;
