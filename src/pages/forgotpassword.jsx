@@ -43,7 +43,9 @@ function ForgotPassword(){
     
             setLocalUsers(map);
             setPassErr(null);
-            navigation('/signin')
+            setTimeout( () => {
+                navigation('/signin')
+            }, 200)
 
         } else {
             setPassErr("პაროლები არ ემთხვევა");
