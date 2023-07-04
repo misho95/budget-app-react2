@@ -91,7 +91,7 @@ function Regist(){
                     {userErr && <div className="text-red-500 pl-1">{userErr}</div>} { userSucc && <div className="text-green-500 pl-1">{userSucc}</div> }
                 </div>
                 <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
-                        <legend className="px-2 text-gray-500">მაილი</legend>
+                        <legend className="px-2 text-gray-500">მეილი</legend>
                         <input value={email} onChange={(e) => { setEmail(e.target.value)}} type="email" placeholder="Example@mail.com" className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none text-gray-800 dark:text-gray-200" required/>
                 </fieldset>
                 <div>
