@@ -8,6 +8,7 @@ function Login(){
     const localUserData = JSON.parse(localStorage.getItem('userDataBase'));
     const [userData, setUserData] = useState( localUserData ? localUserData : []);
     const [ user, setUser] = useState('');
+    const [ error, setError] = useState(null);
     const [ pass, setPass] = useState('');
     const Navigate = useNavigate();
     const [ passErr, setPassErr] = useState(null);
@@ -17,6 +18,13 @@ function Login(){
         const userName = userData.find( (usr) => {
             if(usr.user === user) return usr;
         })
+
+        if(!userName){
+            setError('მომხმარებელი ვერ მოიძებნა');
+            return;
+        } else {
+            setError(null);
+        }
 
         if(userName.pass === pass){
             setPassErr(null);
@@ -35,6 +43,7 @@ function Login(){
                     <legend className="px-2 text-gray-500">სახელი</legend>
                     <input value={user} onChange={ (e) => setUser(e.target.value)} type="text" placeholder="სახელი" className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none text-gray-800 dark:text-gray-200" required/>
                 </fieldset>
+                 {error && <div className="text-red-500 pl-1">{error}</div>}
                 <fieldset className="border-2 border-gray-300 dark:border-gray-600 p-2">
                     <legend className="px-2 text-gray-500">პაროლი</legend>
                     <input value={pass} onChange={ (e) => setPass(e.target.value)} type="password" placeholder="********" className="bg-gray-200 dark:bg-gray-800 w-full py-1 px-2 focus:outline-none text-gray-800 dark:text-gray-200" required/>
